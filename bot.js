@@ -3,6 +3,7 @@ var config = require('./config');
 
 var T = new Twit(config);
 var compliment = 'you look great today!';
+var follow_compliment = 'thanks for the follow, ' + compliment;
 var myUsername = 'bot_confidence';
 
 var stream = T.stream('user'); //user stream
@@ -16,7 +17,7 @@ function followed(followData) {
 	var obj = {};
 	obj['name'] = name;
 	obj['username'] = username;
-	tweetAt(obj);
+	tweetAt(obj, follow_compliment);
 }
 
 //tweeted at 
@@ -33,7 +34,7 @@ function tweetedAt(tweetAtData) {
 		obj['name'] = fromName;
 		obj['username'] = fromUsername;
 		console.log(obj);
-		tweetAt(obj);
+		tweetAt(obj, compliment);
 	}
 }
 
@@ -42,16 +43,19 @@ var daySeconds = 1000*60*24;
 setInterval(dailyTweet, daySeconds);
 
 function dailyTweet() {
-	var today = new Date();
-	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-	tweetOut("Today is " + date + " and " + compliment);
+	tweetOut("Today is " + getDate + " and " + compliment);
 }
 
 //helper functions
-function tweetAt(user) {
-	tweetOut("@" + user['username'] + " " + user['name'] + ", you look so good today!");
+function getDate() {
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	return date;
 }
 
+function tweetAt(user, message) {
+	tweetOut("@" + user['username'] + " " + user['name'] + ", on this day (" + getDate + "), " + message);
+}
 function tweetOut(text) {
 	var tweet = {
 		status: text
