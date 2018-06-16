@@ -1,8 +1,8 @@
 module.exports = {
-	consumer_key:         'CONSUMER_KEY',
-  	consumer_secret:      'CONSUMER_SECRET',
-  	access_token:         'ACCESS_TOKEN',
- 	access_token_secret:  'ACCESS_TOKEN_SECRET',
+	consumer_key:         'TEST',
+  	consumer_secret:      'TEST',
+  	access_token:         'TEST',
+ 	access_token_secret:  'TEST',
   	timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
   	strictSSL:            true,     // optional - requires SSL certificates to be valid.
 }
