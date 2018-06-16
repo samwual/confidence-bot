@@ -1,0 +1,19 @@
+{
+  "name": "npm_demo",
+  "version": "1.0.0",
+  "description": "NPM Testing",
+  "main": "bot.js",
+  "dependencies": {
+    "twit": "^2.2.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "sam",
+  "license": "ISC"
+}
