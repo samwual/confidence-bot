@@ -43,19 +43,21 @@ var daySeconds = 1000*60*24;
 setInterval(dailyTweet, daySeconds);
 
 function dailyTweet() {
-	tweetOut("Today is " + getDate + " and " + compliment);
+	tweetOut("Today is " + todayDate() + " and " + compliment);
 }
 
 //helper functions
-function getDate() {
+function todayDate() {
 	var today = new Date();
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
 	return date;
 }
 
 function tweetAt(user, message) {
-	tweetOut("@" + user['username'] + " " + user['name'] + ", on this day (" + getDate + "), " + message);
+	tweetOut("@" + user['username'] + " " + user['name'] + ", on this day (" + todayDate() + "), " + message);
 }
+
 function tweetOut(text) {
 	var tweet = {
 		status: text
