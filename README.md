@@ -17,3 +17,6 @@ module.exports = {
   strictSSL:            true,     // optional - requires SSL certificates to be valid.
 }
 ```
+
+twitter account: 
+https://twitter.com/bot_confidence
