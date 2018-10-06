@@ -20,3 +20,5 @@ module.exports = {
 
 twitter account: 
 https://twitter.com/bot_confidence
+
+DEPRECATED - The Twit package is broken as of the new Twitter security increase for developers
